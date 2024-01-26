@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://cjsogbrgbg8lq"]
+
+[ext_resource type="Script" path="res://Weapon.gd" id="1_up24x"]
+
+[resource]
+script = ExtResource("1_up24x")
+name = "Spear"
+damage = 7
