@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ch0hlt18wmq3k"]
+[gd_scene load_steps=4 format=3 uid="uid://ch0hlt18wmq3k"]
 
 [ext_resource type="Script" path="res://SaveManager.gd" id="1_upqmb"]
+[ext_resource type="Resource" uid="uid://bwfopqcf6fy1r" path="res://Sword.tres" id="2_403gq"]
+[ext_resource type="Resource" uid="uid://cjsogbrgbg8lq" path="res://Spear.tres" id="3_m1sje"]
 
 [node name="Control" type="Control" node_paths=PackedStringArray("levelText", "healthText", "weaponNameText", "weaponDamageText")]
 layout_mode = 3
@@ -14,6 +16,8 @@ levelText = NodePath("Panel/Label")
 healthText = NodePath("Panel/Label2")
 weaponNameText = NodePath("Panel/Label3")
 weaponDamageText = NodePath("Panel/Label4")
+weapon1 = ExtResource("2_403gq")
+weapon2 = ExtResource("3_m1sje")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -152,5 +156,8 @@ anchor_right = 0.65
 anchor_bottom = 1.0
 text = "Load"
 
+[connection signal="pressed" from="Panel/Button" to="." method="PressLevel"]
+[connection signal="pressed" from="Panel/Button2" to="." method="PressHealth"]
+[connection signal="pressed" from="Panel/Button3" to="." method="PressWeapon"]
 [connection signal="pressed" from="SaveButton" to="." method="Save"]
 [connection signal="pressed" from="LoadButton" to="." method="Load"]
